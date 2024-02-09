@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_22_123900) do
+ActiveRecord::Schema.define(version: 2024_01_22_123901) do
 
   create_table "members", force: :cascade do |t|
     t.integer "indexed_column"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2024_01_22_123900) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["indexed_column"], name: "index_members_on_indexed_column"
+  end
+
+  create_table "studios", force: :cascade do |t|
+    t.integer "indexed_column"
+    t.integer "normal_column"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["indexed_column"], name: "index_studios_on_indexed_column"
   end
 
 end
